@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+</head>
+
+<body>
+
+  <div>
+
+
+  </div>
+
+</body>
+<script>
+  // function f1() {
+
+  //   var n = 999;
+
+  //   nAdd = function () { n += 1 }
+
+  //   function f2() {
+  //     alert(n);
+  //   }
+
+  //   return f2;
+
+  // }
+
+  // var result = f1();
+
+  // result(); // 999
+
+  // nAdd();
+
+  // result(); // 1000
+  // var name = "The Window";
+  // var object = {
+  //   name: "My Object",
+  //   getNameFunc: function () {
+  //     return function () {
+  //       console.log(this.name)
+  //       return this.name;
+  //     };
+
+  //   }
+
+  // };
+
+  // alert(object.getNameFunc()());
+
+  // var name = "The Window";
+  // var that = this;//this指向还是window
+  // console.log(this)
+  // var object = {
+  //   name: "My Object",
+
+  //   getNameFunc: function () {
+  //     var that = this;//改变this的指向，因为在对象object内
+  //     return function () {
+  //       console.log(that)
+  //       return that.name;
+  //     };
+
+  //   }
+
+  // };
+
+  // alert(object.getNameFunc()());
+  // function DOG(name) {
+  //   this.name = name;
+  // }
+  // var dogA = new DOG('大毛');
+
+  // alert(dogA.name); // 大毛
+
+  function DOG(name) {
+
+    this.name = name;
+
+    this.species = '犬科';
+
+  }
+  console.log(DOG())
+  DOG()
+  DOG.prototype = { species: '犬科' };
+  console.log(this)
+  var dogA = new DOG('大毛');
+
+  var dogB = new DOG('二毛');
+
+  dogA.species = '猫科';
+
+  alert(dogB.species); // 显示"犬科"，不受dogA的影响
+</script>
+
+</html>
